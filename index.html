@@ -11,11 +11,11 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Real Revolut Problem-Solving Cases From Actual Interviews">
 <meta property="og:description" content="5 real problem-solving cases from Revolut PM interviews, with complete written solutions and the framework used to approach each case type.">
-<meta property="og:image" content="https://framerusercontent.com/images/n5lJ7fRQoIuqtuBr63bu91l53w.png">
+<meta property="og:image" content="https://YOURDOMAIN.com/images/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Real Revolut Problem-Solving Cases From Actual Interviews">
 <meta name="twitter:description" content="5 real problem-solving cases from Revolut PM interviews, with complete written solutions.">
-<meta name="twitter:image" content="https://framerusercontent.com/images/n5lJ7fRQoIuqtuBr63bu91l53w.png">
+<meta name="twitter:image" content="https://YOURDOMAIN.com/images/og-image.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -201,6 +201,29 @@ footer ul li { margin-bottom: 10px; }
   .logo span { display: none; }
 }
 
+
+  /* ---------- Testimonials (auto-loaded screenshots) ---------- */
+  .testimonials { background: var(--panel); text-align: center; }
+  .testimonials .sub-t { color: var(--ink-soft); max-width: 560px; margin: 6px auto 0; font-size: 1.05rem; }
+  .tcols { columns: 300px; column-gap: 20px; margin-top: 38px; text-align: left; }
+  .tcard {
+    break-inside: avoid; margin: 0 0 20px; border: 1px solid var(--line);
+    border-radius: 12px; overflow: hidden; background: #fff;
+    box-shadow: 0 6px 20px rgba(11,18,32,.06); cursor: zoom-in;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .tcard:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(11,18,32,.12); }
+  .tcard:focus-visible { outline: 3px solid #a9c4ff; outline-offset: 2px; }
+  .tcard img { display: block; width: 100%; height: auto; }
+  .tcard figcaption { display: none; }
+
+  .lightbox {
+    position: fixed; inset: 0; z-index: 100; background: rgba(6,10,20,.85);
+    display: flex; align-items: center; justify-content: center; padding: 24px;
+  }
+  .lightbox[hidden] { display: none; }
+  .lightbox img { max-width: min(920px, 92vw); max-height: 88vh; border-radius: 10px; box-shadow: 0 30px 80px rgba(0,0,0,.5); }
+  .lightbox-close { position: absolute; top: 16px; right: 22px; background: none; border: 0; color: #fff; font-size: 36px; line-height: 1; cursor: pointer; }
 </style>
 
 <!--
@@ -214,7 +237,7 @@ footer ul li { margin-bottom: 10px; }
 <header>
   <div class="wrap nav">
     <a class="logo" href="index.html">
-      <img src="https://framerusercontent.com/images/MaK3r96FuD99vMP04bwJwBTtwM.png?width=129&height=78" alt="Problem Solving Cases logo">
+      <img src="../images/logo.png" alt="Problem Solving Cases logo">
       <span>Problem Solving Cases</span>
     </a>
     <div class="nav-links">
@@ -234,7 +257,7 @@ footer ul li { margin-bottom: 10px; }
       <h1>Real Revolut Problem-Solving Cases From Actual Interviews</h1>
       <p class="sub">See exactly how to structure problems, work through ambiguity, and communicate the thinking in 5 real problem-solving interview cases.</p>
       <a class="btn btn--lg" href="https://revolutcases.lemonsqueezy.com/checkout/buy/be828eb7-a248-4f27-9cda-574c437aaa3a">Get All 5 Cases — $19</a>
-      <img class="hero-img reveal" src="https://framerusercontent.com/images/PYzEfseII0FLEc9GMrCzj5Ngrc.webp?width=2313&height=1773" alt="Preview of the problem-solving case solutions">
+      <img class="hero-img reveal" src="../images/hero.webp" alt="Preview of the problem-solving case solutions">
     </div>
   </section>
 
@@ -253,8 +276,20 @@ footer ul li { margin-bottom: 10px; }
         <a class="btn btn--lg" href="https://revolutcases.lemonsqueezy.com/checkout/buy/be828eb7-a248-4f27-9cda-574c437aaa3a">Get All 5 Cases — $19</a>
       </div>
       <div class="inside-art reveal">
-        <img src="https://framerusercontent.com/images/xE5DcP6fVSnCP7ehJw600XnR7M.png?width=1636&height=1636" alt="The case library">
+        <img src="../images/inside.png" alt="The case library">
       </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS (auto-loaded from images/testimonials/) -->
+  <!-- Drop screenshots named testimonial-1.png, testimonial-2.png ... (or .jpg/.jpeg/.webp).
+       They must be numbered consecutively starting at 1. The section stays hidden until
+       at least one image is found. No HTML editing needed to add more. -->
+  <section class="block testimonials" id="testimonials" hidden>
+    <div class="wrap">
+      <h2 class="section-head">What buyers are saying</h2>
+      <p class="sub-t">Real reactions from people who used the cases.</p>
+      <div class="tcols" id="tcols"></div>
     </div>
   </section>
 
@@ -275,11 +310,17 @@ footer ul li { margin-bottom: 10px; }
 </main>
 
 <!-- FOOTER -->
+<!-- Lightbox for testimonial screenshots -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
+  <img id="lightbox-img" src="" alt="Testimonial screenshot, enlarged">
+</div>
+
 <footer>
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img src="https://framerusercontent.com/images/MaK3r96FuD99vMP04bwJwBTtwM.png?width=129&height=78" alt="Problem Solving Cases logo">
+        <img src="../images/logo.png" alt="Problem Solving Cases logo">
         <p class="fine">All sales are securely processed by Lemon Squeezy.<br>
         Money-back guarantee — email ultimateschemahelp@gmail.com for refunds.</p>
       </div>
@@ -312,6 +353,56 @@ footer ul li { margin-bottom: 10px; }
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ---- Testimonials: auto-discover consecutively numbered screenshots ----
+  (function () {
+    var cols = document.getElementById('tcols');
+    var section = document.getElementById('testimonials');
+    if (!cols || !section) return;
+    var exts = ['png', 'jpg', 'jpeg', 'webp'];
+    var maxProbe = 100;   // safety cap
+    var found = 0;
+
+    function finalize() { if (found > 0) section.hidden = false; }
+
+    function tryIndex(n) {
+      if (n > maxProbe) return finalize();
+      tryExt(n, 0);
+    }
+    function tryExt(n, ei) {
+      if (ei >= exts.length) return finalize();   // first gap -> stop
+      var src = 'images/testimonials/testimonial-' + n + '.' + exts[ei];
+      var probe = new Image();
+      probe.onload = function () { addCard(src, n); found++; tryIndex(n + 1); };
+      probe.onerror = function () { tryExt(n, ei + 1); };
+      probe.src = src;
+    }
+    function addCard(src, n) {
+      var fig = document.createElement('figure');
+      fig.className = 'tcard';
+      fig.tabIndex = 0;
+      fig.setAttribute('role', 'button');
+      fig.setAttribute('aria-label', 'Open testimonial ' + n);
+      var im = document.createElement('img');
+      im.src = src; im.loading = 'lazy'; im.alt = 'Customer testimonial screenshot ' + n;
+      fig.appendChild(im);
+      fig.addEventListener('click', function () { openLightbox(src); });
+      fig.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(src); }
+      });
+      cols.appendChild(fig);
+    }
+    tryIndex(1);
+
+    var lb = document.getElementById('lightbox');
+    var lbImg = document.getElementById('lightbox-img');
+    function openLightbox(src) { lbImg.src = src; lb.hidden = false; document.body.style.overflow = 'hidden'; }
+    function closeLightbox() { lb.hidden = true; lbImg.src = ''; document.body.style.overflow = ''; }
+    lb.addEventListener('click', closeLightbox);
+    lb.querySelector('.lightbox-close').addEventListener('click', function (e) { e.stopPropagation(); closeLightbox(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !lb.hidden) closeLightbox(); });
+  })();
+
 </script>
 
 </body>
