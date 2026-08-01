@@ -133,8 +133,8 @@ ul.checklist li:last-child { border-bottom: 0; }
 .prose p { margin: 0 0 18px; color: #26304a; }
 .prose ul, .prose ol { margin: 0 0 18px 22px; }
 .prose li { margin-bottom: 8px; color: #26304a; }
-.prose a { color: var(--brand); text-decoration: underline; text-underline-offset: 2px; }
-.prose a:hover { color: var(--brand-dark); }
+.prose a:not(.btn) { color: var(--brand); text-decoration: underline; text-underline-offset: 2px; }
+.prose a:not(.btn):hover { color: var(--brand-dark); }
 .prose strong { color: var(--ink); }
 .prose blockquote {
   border-left: 3px solid var(--brand); background: var(--panel);
@@ -242,15 +242,18 @@ footer ul li { margin-bottom: 10px; }
     </div>
   </a>
 
-  <a class="post-card" href="post-template.html">
+  <!-- CARD TEMPLATE — copy this block for each new post, newest first.
+       Kept commented out so it never renders on the live site.
+  <a class="post-card" href="your-post-slug.html">
     <div class="thumb"></div>
     <div class="body">
-      <span class="kicker">Template</span>
+      <span class="kicker">Category</span>
       <h2>Your next post title goes here</h2>
-      <p>This card points at the reusable post template. Duplicate it, rename it, and replace this copy for each new article you publish.</p>
+      <p>One or two sentences summarising the post.</p>
       <span class="read">Read article →</span>
     </div>
   </a>
+  -->
 
 </div>
 

@@ -21,12 +21,13 @@ index.html                     # home page (root)
 sitemap.xml                    # update when adding blog posts
 robots.txt
 CNAME                          # custom domain (auto-managed by GitHub Pages)
+_config.yml                    # Jekyll: keeps listed files out of the live site
 legal/
   terms-and-conditions.html
   privacy-policy.html
 blog/
   index.html                   # blog listing (add a card per new post)
-  post-template.html           # duplicate this to create a new post
+  post-template.html           # duplicate this to create a new post (NOT published)
   how-to-approach-a-pm-problem-solving-case.html   # example post
 images/
   logo.png  hero.webp  inside.png  og-image.png
@@ -40,6 +41,21 @@ images/
 There is **no shared stylesheet**. Each HTML file has its own `<style>` block.
 A design change must be applied to **every** page's `<style>` block to stay
 consistent. (This was a deliberate choice so each page renders standalone.)
+
+### Buttons inside `.prose` must stay excluded from the link colour
+`.prose a` styles body links brand-blue with an underline. A `.btn` also has a
+brand-blue **background**, so an unscoped `.prose a` wins on specificity
+(0,1,1 vs 0,1,0) and paints the button label blue-on-blue — invisible. The rule
+is therefore written as `.prose a:not(.btn)` on every page. Keep the `:not(.btn)`
+if you touch it, and never rely on `.btn`'s own `color` to win inside prose.
+
+### Local-only files (in the repo, off the live site)
+`_config.yml` lists files Jekyll must not publish — currently
+`blog/post-template.html`, `CLAUDE.md`, `README.md`. They stay committed and
+available locally; they just never reach nexxround.com. Add to that `exclude:`
+list rather than deleting or gitignoring a file. Because the template is
+unpublished, **nothing may link to it** — the blog listing keeps its card
+markup as an HTML comment instead.
 
 ### Image paths depend on folder depth
 - Root pages (`index.html`) reference images as `images/...`

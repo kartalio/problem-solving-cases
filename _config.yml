@@ -1,0 +1,11 @@
+# GitHub Pages (Jekyll) build config.
+# This site has no build step — Jekyll just copies files through. The only job
+# of this file is to keep certain files in the git repo but OFF the live site.
+#
+# Anything listed under `exclude` still lives in the repo and on your machine;
+# it simply is not published to https://nexxround.com/.
+
+exclude:
+  - blog/post-template.html   # scaffold for new posts — local reference only
+  - CLAUDE.md                 # project notes for Claude Code, not for visitors
+  - README.md
