@@ -3,17 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to Approach a PM Problem-Solving Case — 5-Step Structure</title>
-<meta name="description" content="A repeatable five-step structure for product manager problem-solving interview cases: clarify, frame, explore, decide, and pressure-test your answer.">
-<link rel="canonical" href="https://nexxround.com/blog/how-to-approach-a-pm-problem-solving-case.html">
+<title>A Real Revolut PM Problem-Solving Case (Free Worked Example)</title>
+<meta name="description" content="Watch a real Revolut PM problem-solving case worked end to end using the MECE framework — the buckets, the trap, and how to structure your approach. Free.">
+<link rel="canonical" href="https://nexxround.com/cases/revolut-problem-solving-case.html">
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to Approach a PM Problem-Solving Case — 5-Step Structure">
-<meta property="og:description" content="A repeatable five-step structure for PM problem-solving interview cases.">
+<meta property="og:title" content="A Real Revolut PM Problem-Solving Case (Free Worked Example)">
+<meta property="og:description" content="A real Revolut PM case worked with the MECE framework — free sample from the case library.">
 <meta property="og:image" content="https://nexxround.com/images/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="How to Approach a PM Problem-Solving Case">
-<meta name="twitter:description" content="A repeatable five-step structure for PM problem-solving interview cases.">
+<meta name="twitter:title" content="A Real Revolut PM Problem-Solving Case (Free Worked Example)">
+<meta name="twitter:description" content="A real Revolut PM case worked with the MECE framework — free sample.">
+<meta name="twitter:image" content="https://nexxround.com/images/og-image.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -135,8 +136,8 @@ ul.checklist li:last-child { border-bottom: 0; }
 .prose p { margin: 0 0 18px; color: #26304a; }
 .prose ul, .prose ol { margin: 0 0 18px 22px; }
 .prose li { margin-bottom: 8px; color: #26304a; }
-.prose a:not(.btn) { color: var(--brand); text-decoration: underline; text-underline-offset: 2px; }
-.prose a:not(.btn):hover { color: var(--brand-dark); }
+.prose a { color: var(--brand); text-decoration: underline; text-underline-offset: 2px; }
+.prose a:hover { color: var(--brand-dark); }
 .prose strong { color: var(--ink); }
 .prose blockquote {
   border-left: 3px solid var(--brand); background: var(--panel);
@@ -199,32 +200,78 @@ footer ul li { margin-bottom: 10px; }
   .logo span { display: none; }
 }
 
-</style>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How to Approach a PM Problem-Solving Case — 5-Step Structure",
-  "description": "A repeatable five-step structure for product manager problem-solving interview cases.",
-  "author": { "@type": "Person", "name": "Problem Solving Cases" },
-  "publisher": { "@type": "Organization", "name": "Problem Solving Cases" },
-  "datePublished": "2026-07-29",
-  "dateModified": "2026-07-29",
-  "mainEntityOfPage": "https://nexxround.com/blog/how-to-approach-a-pm-problem-solving-case.html"
-}
-</script>
+  /* ---------- Testimonials (auto-loaded screenshots) ---------- */
+  .testimonials { background: var(--panel); text-align: center; }
+  .testimonials .sub-t { color: var(--ink-soft); max-width: 560px; margin: 6px auto 0; font-size: 1.05rem; }
+  .tcols { columns: 300px; column-gap: 20px; margin-top: 38px; text-align: left; }
+  .tcard {
+    break-inside: avoid; margin: 0 0 20px; border: 1px solid var(--line);
+    border-radius: 12px; overflow: hidden; background: #fff;
+    box-shadow: 0 6px 20px rgba(11,18,32,.06); cursor: zoom-in;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .tcard:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(11,18,32,.12); }
+  .tcard:focus-visible { outline: 3px solid #a9c4ff; outline-offset: 2px; }
+  .tcard img { display: block; width: 100%; height: auto; }
+  .tcard figcaption { display: none; }
+
+  .lightbox {
+    position: fixed; inset: 0; z-index: 100; background: rgba(6,10,20,.85);
+    display: flex; align-items: center; justify-content: center; padding: 24px;
+  }
+  .lightbox[hidden] { display: none; }
+  .lightbox img { max-width: min(920px, 92vw); max-height: 88vh; border-radius: 10px; box-shadow: 0 30px 80px rgba(0,0,0,.5); }
+  .lightbox-close { position: absolute; top: 16px; right: 22px; background: none; border: 0; color: #fff; font-size: 36px; line-height: 1; cursor: pointer; }
+
+  /* ---------- Case page specifics ---------- */
+  .case-callout {
+    border: 1px solid var(--line); border-left: 4px solid var(--brand);
+    background: var(--panel); border-radius: 0 12px 12px 0;
+    padding: 20px 24px; margin: 26px 0;
+  }
+  .case-callout h3 { margin: 0 0 8px; font-size: 1.15rem; }
+  .case-callout p:last-child { margin-bottom: 0; }
+  .bucket-list { list-style: none; margin: 18px 0; padding: 0; counter-reset: b; }
+  .bucket-list li {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 14px 18px; margin-bottom: 12px; background: #fff;
+    border: 1px solid var(--line); border-radius: 12px;
+  }
+  .bucket-list li b { color: var(--ink); }
+  .bnum {
+    flex: 0 0 30px; height: 30px; border-radius: 8px; background: var(--brand);
+    color: #fff; font-weight: 800; display: grid; place-items: center; font-size: 15px;
+  }
+  .trap {
+    border: 1px solid #f3d9a8; border-left: 4px solid #e0930f;
+    background: #fff8ec; border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 26px 0;
+  }
+  .trap h3 { margin: 0 0 8px; font-size: 1.15rem; color: #9a6208; }
+  .paywall {
+    margin: 44px 0 8px; padding: 34px 30px; border-radius: 16px;
+    background: var(--accent); color: #fff; text-align: center;
+  }
+  .paywall h2 { color: #fff; font-size: 1.5rem; margin: 0 0 8px; letter-spacing: -.01em; }
+  .paywall p.lead { color: #c3cbdd; margin: 0 auto 20px; max-width: 520px; }
+  .paywall ul { list-style: none; margin: 0 auto 24px; padding: 0; max-width: 460px; text-align: left; display: inline-block; }
+  .paywall ul li { padding: 8px 0; display: flex; gap: 10px; align-items: flex-start; color: #e8edf6; }
+  .paywall ul li .pk { color: var(--check); font-weight: 800; flex: 0 0 auto; }
+  .paywall .price-note { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8f9ab4; margin-top: 16px; }
+  /* Fix: .prose a (blue + underline) was overriding button text. Keep buttons white & clean inside prose. */
+  .prose a.btn, .prose a.btn:hover { color: #fff; text-decoration: none; }
+</style>
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
     <a class="logo" href="../index.html">
-      <img src="../images/logo.png" alt="Problem Solving Cases logo">
+      <img src="../images/logo.png" alt="Nexxround logo">
       <span>Problem Solving Cases</span>
     </a>
     <div class="nav-links">
-      <a class="navlink" href="index.html">Blog</a>
+      <a class="navlink" href="../blog/index.html">Blog</a>
       <a class="btn" href="https://revolutcases.lemonsqueezy.com/checkout/buy/be828eb7-a248-4f27-9cda-574c437aaa3a">Get All 5 Cases — $19</a>
     </div>
   </div>
@@ -232,61 +279,67 @@ footer ul li { margin-bottom: 10px; }
 
 <div class="page-band">
   <div class="wrap">
-    <span class="eyebrow">Frameworks</span>
-    <h1>How to approach a PM problem-solving case</h1>
-    <div class="article-meta">
-      <span>By Problem Solving Cases</span>
-      <span>29 July 2026</span>
-      <span>6 min read</span>
-    </div>
+    <span class="eyebrow">Free worked case</span>
+    <h1>A real Revolut PM problem-solving case</h1>
+    <p class="lede">See how a real interview case is structured with the MECE framework — the buckets, the questions, and the trap most candidates fall into. No signup, no paywall for this one.</p>
   </div>
 </div>
 
 <article class="prose">
-  <p>Most candidates fail a product manager problem-solving case not because they lack the right answer, but because they jump straight to solutions before they understand the problem. Interviewers are watching how you think. This post gives you a repeatable five-step structure you can apply to almost any problem-solving prompt, so you always have a starting move.</p>
 
-  <h2>1. Clarify the goal before touching the problem</h2>
-  <p>Prompts are deliberately ambiguous. Spend the first minute narrowing scope: who is the user, what outcome matters, and what does &ldquo;better&rdquo; actually mean here? Ask one or two sharp clarifying questions, then state the goal back in your own words. This alone separates strong candidates from the rest.</p>
+  <h2>The case</h2>
+  <p>You've been asked by the Head of People at Revolut to solve two problems:</p>
+  <ol>
+    <li>Reduce the time to hire for backend developers</li>
+    <li>Increase the hire conversion rate for backend developers</li>
+  </ol>
+  <p>You have 30 minutes to work through this problem. The interviewer has data, but will only reveal it if you ask the right questions. If your question is irrelevant or off-track, they'll say <em>"I don't have data for that."</em></p>
+  <div class="case-callout">
+    <h3>Your task</h3>
+    <p>Structure your approach and identify what's causing these problems.</p>
+  </div>
 
-  <h2>2. Frame the problem out loud</h2>
-  <p>Before solving, lay out how you'll break the problem down. A simple frame — segments, drivers, or a funnel — signals structure. Say it explicitly: &ldquo;I'll look at this in three parts.&rdquo; The interviewer can now follow you, and you've given yourself a map.</p>
-
-  <blockquote>Structure is the product you're actually being tested on. The recommendation is secondary to how you got there.</blockquote>
-
-  <h2>3. Explore, don't guess</h2>
-  <p>Walk through your frame one branch at a time. State assumptions as you go and flag which ones you'd validate with data. It's fine to be wrong here — what matters is that your reasoning is legible and you're not pattern-matching to a memorised answer.</p>
-
-  <h3>Common branches worth exploring</h3>
-  <ul>
-    <li>User segments and where their needs diverge.</li>
-    <li>The funnel or journey, and where drop-off concentrates.</li>
-    <li>Trade-offs between effort, impact, and risk.</li>
+  <h2>The framework: MECE</h2>
+  <p>For problem-solving cases like this, I used the <strong>MECE</strong> framework — Mutually Exclusive, Collectively Exhaustive. It helps you break a complex problem into distinct categories that don't overlap but still cover everything.</p>
+  <p>For this hiring problem, I created three main buckets:</p>
+  <ul class="bucket-list">
+    <li><span class="bnum">1</span><div><b>System</b> — hiring tools, process bottlenecks</div></li>
+    <li><span class="bnum">2</span><div><b>Internal</b> — interviewers, paperwork, scheduling</div></li>
+    <li><span class="bnum">3</span><div><b>External</b> — competitors, salary, market</div></li>
   </ul>
+  <p>The key is asking targeted questions within each bucket to reveal where the problems actually are.</p>
 
-  <h2>4. Decide and commit</h2>
-  <p>Ambiguity is not an excuse to avoid a recommendation. Pick a direction, say why, and name what you're trading off. A clear, defensible &ldquo;here's what I'd do and why&rdquo; beats an exhaustive list of options with no point of view.</p>
+  <div class="trap">
+    <h3>The trap</h3>
+    <p>Most candidates waste time on the wrong questions or miss a critical element entirely. There's a specific trap in this case about <strong>timeline assumptions</strong> that derails candidates who don't structure their approach properly.</p>
+  </div>
 
-  <h2>5. Pressure-test your answer</h2>
-  <p>Close by stress-testing yourself before the interviewer does: what would change your mind, what's the biggest risk, and how would you measure whether the decision worked? This shows maturity and buys you enormous credibility.</p>
-
-<div class="cta-card">
-  <h3>See the Real Revolut Problem Solving Interview Case</h3>
-  <p>Here's a full Revolut PM problem solving case, worked through end to end with the MECE framework — free.</p>
-  <a class="btn btn--lg" href="../cases/revolut-problem-solving-case.html">Get Real Case for FREE →</a>
-</div>
-
-  <h2>The takeaway</h2>
-  <p>You don't need a different approach for every case — you need one structure you trust under pressure. Clarify, frame, explore, decide, pressure-test. Practise it until it's automatic, and the ambiguity stops being scary.</p>
+  <div class="paywall">
+    <h2>Want the complete solution for 5 problem-solving cases?</h2>
+    <p class="lead">You've seen how the structure works. The full breakdown shows exactly how each case plays out:</p>
+    <ul>
+      <li><span class="pk">✓</span> 5 different cases</li>
+      <li><span class="pk">✓</span> The exact questions I asked in each MECE bucket</li>
+      <li><span class="pk">✓</span> What data the interviewer revealed (and what it meant)</li>
+      <li><span class="pk">✓</span> How to avoid the timeline trap</li>
+      <li><span class="pk">✓</span> My final recommendation with prioritization</li>
+    </ul>
+    <div>
+      <a class="btn btn--lg" href="https://revolutcases.lemonsqueezy.com/checkout/buy/be828eb7-a248-4f27-9cda-574c437aaa3a">Get all 5 cases + solutions — $19</a>
+    </div>
+    <p class="price-note">Instant PDF download · money-back guarantee</p>
+  </div>
 
   <hr>
-  <p><a href="index.html">← Back to the blog</a></p>
+  <p><a href="../blog/index.html">← More on PM interview problem-solving</a></p>
+
 </article>
 
 <footer>
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img src="../images/logo.png" alt="Problem Solving Cases logo">
+        <img src="../images/logo.png" alt="Nexxround logo">
         <p class="fine">All sales are securely processed by Lemon Squeezy.<br>
         Money-back guarantee — email ultimateschemahelp@gmail.com for refunds.</p>
       </div>
@@ -294,7 +347,7 @@ footer ul li { margin-bottom: 10px; }
         <h4>Quick Links</h4>
         <ul>
           <li><a href="../index.html">Home</a></li>
-          <li><a href="index.html">Blog</a></li>
+          <li><a href="../blog/index.html">Blog</a></li>
           <li><a href="../legal/terms-and-conditions.html">Terms &amp; Conditions</a></li>
           <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
         </ul>
