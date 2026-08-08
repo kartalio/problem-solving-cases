@@ -3,7 +3,7 @@
 ## What this is
 A static marketing + blog site for **Problem Solving Cases**, a $19 downloadable
 PDF of real Revolut PM interview problem-solving cases. Checkout is handled by
-Lemon Squeezy (external link). No build step, no framework — plain HTML/CSS/JS.
+Lemon Squeezy (external link). No build step, no framework, plain HTML/CSS/JS.
 
 ## Hosting
 - Hosted on **GitHub Pages**, repo `kartalio/problem-solving-cases`.
